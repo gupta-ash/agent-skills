@@ -1,0 +1,47 @@
+{
+  "generator_version": "packet-extractor/1",
+  "source_name": "p2_disc_spec.md",
+  "source_digest": "3fff8d86d31ebd15548a28c1692b8ce65925a6e5e11464f9c02d1c3bc313ffa1",
+  "source_digest_span_rule": "whole-file",
+  "pin_levels": {
+    "block": "assets[*].digest, over assets[*].span_rule — build_assets REFUSES to re-pin a changed block without repin, and load_assets REFUSES THE RUN when the asset on disk disagrees with this lock",
+    "section": "assets[*].section_digest, over assets[*].section_span_rule — build_assets REPORTS a change and never refuses",
+    "whole-file": "source_digest, over source_digest_span_rule — recorded as provenance, enforced nowhere"
+  },
+  "boundary_rule": "exactly-one section heading; section ends at the next line starting with '#'; the nth fenced block within it; both fence lines and the newline terminating the opening fence line excluded; nothing trimmed or normalised beyond BOM-strip and CRLF->LF",
+  "assets": {
+    "rubric.txt": {
+      "digest": "d6191925bd5983a72039969e86280cd6b7d008c62fa68752de3776baf6dd8d82",
+      "bytes": 9277,
+      "span_rule": "fenced-block:ordinal-1",
+      "section_heading": "## 1.6 THE INJECTED RUBRIC — literal text",
+      "fence_ordinal": 1,
+      "section_digest": "56e0996d805e741e1fb1c36f4460e1016087b0b2a87fd7c8e022594f2f128d1b",
+      "section_bytes": 9524,
+      "section_span_rule": "section:## 1.6 THE INJECTED RUBRIC — literal text:heading-any-level",
+      "role": "row 3 of the packet — the rubric, injected verbatim (I1)"
+    },
+    "preamble_envelope.txt": {
+      "digest": "fc350f0f4ed5208db93abc33d2afb0f624f0e2a0dbac05c631e484c6d67662ab",
+      "bytes": 649,
+      "span_rule": "fenced-block:ordinal-1",
+      "section_heading": "### I3 — The preamble declares `review-envelope/2`",
+      "fence_ordinal": 1,
+      "section_digest": "0c0423813ffd881a2a22d2742342fd781093923efc30609ac8c4a2fe8976ab80",
+      "section_bytes": 1685,
+      "section_span_rule": "section:### I3 — The preamble declares `review-envelope/2`:heading-any-level",
+      "role": "row 1 of the packet — the six top-level keys (I3)"
+    },
+    "preamble_finding.txt": {
+      "digest": "94d8b74641446e857c08677d753fdae20c575c8a94df17e5bb270538c54f6c97",
+      "bytes": 569,
+      "span_rule": "fenced-block:ordinal-2",
+      "section_heading": "### I3 — The preamble declares `review-envelope/2`",
+      "fence_ordinal": 2,
+      "section_digest": "0c0423813ffd881a2a22d2742342fd781093923efc30609ac8c4a2fe8976ab80",
+      "section_bytes": 1685,
+      "section_span_rule": "section:### I3 — The preamble declares `review-envelope/2`:heading-any-level",
+      "role": "row 1 of the packet — the ten per-finding keys (I3)"
+    }
+  }
+}

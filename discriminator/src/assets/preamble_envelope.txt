@@ -1,0 +1,11 @@
+The object MUST carry EXACTLY these six top-level keys:
+  {
+    "schema_version":      "review-envelope/2",
+    "verdict":             <string>,
+    "summary":             <string>,
+    "findings":            [ <finding>, ... ],
+    "next_steps":          [ <string>, ... ],
+    "artifact_class_echo": <string or null>
+  }
+
+`schema_version` is that literal string and nothing else. `artifact_class_echo` is the artifact class named by the contract appended below, copied VERBATIM. If no contract was appended, or it names no class, emit `null` — do NOT guess one. `null` is the correct and expected answer there, and the caller checks that field.

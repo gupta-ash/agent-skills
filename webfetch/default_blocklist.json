@@ -1,0 +1,16 @@
+{
+  "schema_version": 3,
+  "_comment": "Bootstrap seed for ~/.local/share/webfetch/state.db. Runtime learning lives in SQLite, not this file. Schema version 3 preserves path-scoped rewrites and the persisted five-slot tier order.",
+  "rewrites": [
+    {"host": "reddit.com",     "path_prefix": "/r/",        "target_host": "old.reddit.com"},
+    {"host": "reddit.com",     "path_prefix": "/comments/", "target_host": "old.reddit.com"},
+    {"host": "reddit.com",     "path_prefix": "/user/",     "target_host": "old.reddit.com"},
+    {"host": "www.reddit.com", "path_prefix": "/r/",        "target_host": "old.reddit.com"},
+    {"host": "www.reddit.com", "path_prefix": "/comments/", "target_host": "old.reddit.com"},
+    {"host": "www.reddit.com", "path_prefix": "/user/",     "target_host": "old.reddit.com"}
+  ],
+  "domains": [
+    {"domain": "x.com",       "tier_idx": 1, "tier": "headless", "reason": "JS-only SPA; HTTP returns 'JavaScript is disabled' page (293 chars after trafilatura)"},
+    {"domain": "twitter.com", "tier_idx": 1, "tier": "headless", "reason": "JS-only SPA (same engine as x.com)"}
+  ]
+}

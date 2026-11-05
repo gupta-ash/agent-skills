@@ -1,0 +1,37 @@
+SearXNG bundled client and resource attribution
+
+Active runtime client: searxng_search.py
+Original published skill: local-websearch, version 1.0.0
+Publisher: stperic
+Primary listing: https://clawhub.ai/stperic/skills/local-websearch
+Primary version metadata: https://clawhub.ai/api/v1/skills/local-websearch/versions/1.0.0
+Selected original file: searxng_search.py, 3509 bytes
+Original SHA-256: e23e4b3966d5ef8fe8dcd5b040e8a37b84e4f7ad75e8cc8762b9ac1abb649eda
+
+Separate earlier SearXNG resource origin:
+Published skill: searxng, version 1.0.3
+Attributed author: Avinash Venkatswamy (publisher abk234)
+Primary listing: https://clawhub.ai/abk234/skills/searxng
+Primary version metadata: https://clawhub.ai/api/v1/skills/searxng/versions/1.0.3
+Its rich scripts/searxng.py client and installer are not the selected active
+root client and are not included in this public runtime closure. Current
+usage references have been adapted for the selected root client.
+
+Licensing basis: MIT No Attribution (MIT-0), operative terms in LICENSE.
+The primary ClawHub publisher-wide policy explicitly states:
+  "Publishing a skill means it is released under MIT-0 on ClawHub."
+  "Published skills are free to use, modify, and redistribute without attribution."
+Pinned policy source:
+https://github.com/openclaw/clawhub/blob/4c53ec1dba1c9fa32c0d911964ccd291fe6b823b/docs/cli.md
+(section: skill publish <path>)
+License reference: https://spdx.org/licenses/MIT-0.html
+
+The primary listings display MIT-0; legacy version API license fields are null.
+The registry's explicit publication policy, not the UI label alone, supplies
+the published-skill license basis. No absent copyright-holder/year declaration
+is invented. The adjacent LICENSE reproduces the operative permission and
+warranty terms without a fabricated copyright line. Attribution is retained
+for provenance even though MIT-0 has no attribution-retention requirement.
+
+This notice does not relicense unrelated first-party repository code or
+claim that the two SearXNG resources share the same implementation.

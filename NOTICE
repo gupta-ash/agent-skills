@@ -1,0 +1,31 @@
+agent-skills attribution
+
+First-party code is offered under the root MIT LICENSE by gupta-ash. Product
+compatibility names and API references do not imply affiliation or endorsement.
+
+SearXNG client and resource
+--------------------------
+The selected searxng_search.py originates in stperic's local-websearch skill,
+version 1.0.0, published on ClawHub. Original selected bytes: 3509 bytes,
+SHA-256 e23e4b3966d5ef8fe8dcd5b040e8a37b84e4f7ad75e8cc8762b9ac1abb649eda.
+Separate usage-resource attribution is retained for Avinash Venkatswamy's
+searxng skill, version 1.0.3 (publisher abk234); its different rich client is
+not substituted for the selected root client.
+
+The applicable published-skill terms are MIT No Attribution (MIT-0), under the
+primary ClawHub publication policy. Complete operative terms and the exact
+primary/version/pinned policy provenance are retained beside the provider at:
+  websearch/providers/searxng/LICENSE
+  websearch/providers/searxng/NOTICE
+Legacy version API license fields are null; the licensing basis is the
+explicit publisher-wide policy, not the UI label alone. No unprovided
+copyright-holder/year line is invented.
+
+Codex search protocol acknowledgment
+------------------------------------
+The independently implemented Codex search protocol was informed by Mateus
+DCC's pi-gpt-search, revision 7b0fe64cee8c3d4c8e7b0bc053615145beda69e0:
+https://github.com/mateusdcc/pi-gpt-search/tree/7b0fe64cee8c3d4c8e7b0bc053615145beda69e0
+The pinned package declares MIT. The Python provider is not a vendored or
+translated copy of that TypeScript implementation. See the provider README
+for the precise protocol provenance and operating limitations.

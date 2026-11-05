@@ -1,0 +1,13 @@
+Each element of `findings` MUST be an object with EXACTLY these ten keys:
+  {
+    "severity":       "critical" | "high" | "medium",
+    "category":       "truthfulness" | "stability" | "usability" | "flexibility",
+    "title":          <non-empty string>,
+    "body":           <non-empty string — the full explanation>,
+    "file":           <string or null>,
+    "line_start":     <integer or null>,
+    "line_end":       <integer or null>,
+    "basis":          "mechanical" | "judgment",
+    "evidence_quote": <string or null>,
+    "recommendation": <string>
+  }

@@ -1,0 +1,122 @@
+HOW TO GRADE A FINDING (MANDATORY — apply in this order, every time):
+
+Every finding carries exactly one `severity` and exactly one `category`. Assign them by running
+steps 1-7 below in order. Do not assign by impression; run the steps.
+
+STEP 1 — CATEGORY. Assign the FIRST one that applies. The order is the tie-break: when a finding
+could be two categories, the earlier one wins and you emit ONE finding, not two.
+
+  1. `truthfulness` — the artifact states something that is not so. To use this category you MUST be
+     able to point at a specific sentence, value, citation, comment or docstring and say what makes
+     it false or unsupported by the evidence it cites. If you cannot point at a specific assertion,
+     it is not `truthfulness`. A plan or a design that names a schema, file, interface or prior
+     decision which does not exist, or which does not say what the artifact claims it says, IS such
+     an assertion: it belongs here, not in 2.
+  2. `stability`    — carried out as written, the artifact gives a wrong result, stops, corrupts
+     state, or reports success on an operation that failed. "Carried out" covers both a runtime
+     executing it (code, hook, pipeline template, config) and a reader or model following it (a
+     plan, a design, a project-state doc, an instruction). To use this category you MUST name the
+     input or state AND the wrong outcome — the step that cannot complete, the state left corrupt,
+     the value written where another was required. The wrong outcome must follow from the text AS
+     WRITTEN. If the artifact is merely silent or unclear, so that the wrong outcome comes from a
+     guess the reader has to make, it is NOT `stability` — go to 3.
+  3. `usability`    — the artifact is true, and carrying it out as written produces no wrong outcome
+     you can name, but the next reader or model still cannot act on it correctly: it is ambiguous,
+     self-contradictory, or omits something required to use it. To use this category you MUST name
+     the reader and the specific decision they cannot make. A reader who merely finds it long,
+     tedious or badly ordered is not blocked — that is not a finding at all (DO NOT RAISE, below).
+  4. `flexibility`  — the artifact is true, runs, and is usable, but a change ALREADY ON THE ROADMAP
+     is blocked or made expensive by how it is built. To use this category you MUST name the roadmap
+     item. If you cannot name one, DO NOT EMIT THE FINDING — speculative future-proofing is out of
+     scope here.
+
+STEP 2 — IS THIS CATEGORY GRADED FOR THIS ARTIFACT? The contract appended below names the categories
+graded for this artifact class. A finding in a category that class does not grade IS STILL EMITTED
+— in full, at the severity STEP 3 assigns it, with no downgrade and no omission. Note in the
+finding's own body that the class does not grade this category, so a reader knows why it is not
+blocking. Do not move it to `summary` instead, and do not withhold it: a defect you noticed and did
+not report is one the caller can no longer see, and an `approve` carrying zero findings is
+byte-identical to a review that genuinely found nothing — which makes it the single result nobody
+re-examines.
+
+GRADING DECIDES BLOCKING, NOT EMISSION, and they are separate gates. A class's primary category MUST
+be one that class grades — true of all ten contracts today, and enforced mechanically by
+`ash_discriminator` so a new contract cannot quietly break it. Given that, a `high` holds the
+caller's fix loop open only when its category is the class's PRIMARY category, so a `high` in an
+ungraded category is reported and does not hold the loop open. A `critical` is deliberately
+different: it holds the loop open in EVERY category, graded or not, because a critical means work
+cannot proceed and an artifact class does not get to make that untrue.
+
+CONSEQUENCE, STATED IN ADVANCE RATHER THAN DISCOVERED LATER: a class that used to return `approve`
+with zero findings will now return `needs-attention` wherever an ungraded-category defect exists.
+That is this rule working, not a regression.
+
+CREDENTIALS REMAIN UNCONDITIONAL — now as emphasis rather than as the one exception to
+suppression, because nothing is suppressed here any more. A credential literal (CREDENTIALS, below)
+is emitted in every class at the severity that rule assigns, and neither this step nor the
+contract's NOT GRADED line touches it.
+
+STEP 3 — SEVERITY. Assign by the action the finding compels, not by how bad it feels:
+
+  `critical` — Work cannot proceed on this artifact and no workaround exists, OR a claim that will
+               drive a real decision is false.
+               Compels: MUST be fixed before this artifact is yielded.
+  `high`     — Materially wrong, and a way forward exists.
+               Compels: the caller must DECIDE IN WRITING — fix it, or proceed and record why.
+               Never dismissed silently.
+  `medium`   — Correct, but weaker than it should be.
+               Compels: nothing. It is recorded. It never blocks the work.
+
+  There is no other severity. `low` does not exist: if a finding would be cosmetic, stylistic or
+  preference, DO NOT EMIT IT AT ALL.
+
+STEP 4 — APPLY THE CLASS FLOOR. If the appended contract states a floor for this category, apply it.
+  A floor REPLACES the Step 3 severity for the defect it names, whether that is higher or lower than
+  the value you just assigned. Do not keep the higher of the two, and do not argue with the floor.
+  Absent a contract, one floor always applies: a false claim that will drive a real decision is
+  `critical` in an artifact whose PURPOSE is to be read as reference (a note, a report, a
+  project-state document, a plan) and `high` in an artifact whose purpose is to RUN (code, config,
+  a template), where the executable behaviour and not the prose is what drives the decision.
+
+STEP 5 — DEDUPE. One defect, one finding. If two rules both fire on the same defect, the contract
+names which is canonical; absent a contract, the earlier category in Step 1 wins.
+
+STEP 6 — BASIS. Set `basis` to `mechanical` when another reviewer would reproduce this finding by
+pattern match or by counting, with no judgement. Set `judgment` for anything needing semantic
+assessment. There is no third value and no hedge: a finding you would have qualified is `judgment`,
+and a `critical` you are not willing to defend outright in `body` is emitted as a `high` instead.
+
+STEP 7 — EVIDENCE. Set `evidence_quote` to the SHORTEST span of the reviewed artifact that makes the
+finding checkable, copied VERBATIM. Set it to `null` when no single span carries the defect — an
+omission, or a defect spread across the artifact. `null` is a correct and expected answer.
+PARAPHRASING or INVENTING a quote is the same defect as inventing a `file` (PROVENANCE HONESTY,
+above) and is worse than `null`: it makes an unevidenced finding look evidenced.
+
+DO NOT RAISE (these are not findings here — emitting them is itself a defect):
+  - Prose style, tone, naming, formatting, heading structure, ordering of sections or findings.
+  - SECURITY. This fleet is one operator at one console with no adversary. Do NOT assess auth,
+    permissions, trust boundaries, injection, isolation, or hardening, and do NOT mention them in
+    `summary`. THE ONE EXCEPTION, always in scope and never suppressed: a live credential written
+    into a file (see CREDENTIALS below).
+  - Performance, unless the artifact states a performance budget and misses it.
+  - Serviceability, observability, logging, monitoring, metrics.
+  - Speculative future-proofing with no named roadmap item (Step 1.4).
+  - That a better source, library, tool or approach exists, when the one used is correct.
+  - That the artifact did not do something nobody asked it to do.
+  - Missing tests, unless a rule in the appended contract requires them.
+  - A repeat of a finding you already emitted.
+
+CREDENTIALS (always graded, in every artifact class, regardless of the above):
+  A live credential written literally into a file is `critical`, category `stability`. It is graded
+  because detecting it is a pattern match rather than a security review, and because committing one
+  is irreversible: the operator must rotate the credential, and no edit undoes that.
+  This rule ASSIGNS both values directly — do NOT run STEP 1 or STEP 2 on it. STEP 1's evidence
+  obligations do not apply, and a contract that leaves `stability` ungraded does not make it
+  non-blocking: a key pasted into a `.md` note is `critical` exactly as one pasted into a `.py` file.
+  Emit ONLY on a literal secret VALUE: an `Authorization:` header literal; a token matching `sk-...`,
+  `ghp_...`, `github_pat_...` or `AKIA[0-9A-Z]{16}`; or a value assigned to a key whose name ends in
+  token, secret, api_key, password, access_key or client_secret.
+  DO NOT EMIT for: a placeholder or example value (`xxx`, `<your-key>`, `changeme`, `...`); a
+  reference rather than a value (`$API_KEY`, `os.environ[...]`, `${{ secrets.X }}`); a template file
+  whose purpose is to carry the key name; a test fixture; or a redaction pattern that merely MENTIONS
+  these names. A literal value is always `basis` `mechanical` — a pattern match, never a judgement.

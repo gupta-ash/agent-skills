@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "workflows": {
+    "wiki-ingest": {"module": "wiki/runtime/workflows.py", "factory": "build_workflow", "artifact_validator": "validate_artifact"},
+    "wiki-compile": {"module": "wiki/runtime/workflows.py", "factory": "build_workflow", "artifact_validator": "validate_artifact"},
+    "wiki-strategize": {"module": "wiki/runtime/workflows.py", "factory": "build_workflow", "artifact_validator": "validate_artifact"},
+    "wiki-reverify": {"module": "wiki/runtime/workflows.py", "factory": "build_workflow", "artifact_validator": "validate_artifact"},
+    "wiki-content-check": {"module": "wiki/runtime/workflows.py", "factory": "build_workflow", "artifact_validator": "validate_artifact"}
+  }
+}

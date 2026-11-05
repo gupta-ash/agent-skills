@@ -1,0 +1,14 @@
+# Stable committed and checkout text for Windows and Unix source consumers.
+* text=auto eol=lf
+
+# Binary resources retain their exact bytes.
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.pdf -text
+*.epub -text
+*.mobi -text
+*.azw3 -text
+*.woff -text
+*.woff2 -text

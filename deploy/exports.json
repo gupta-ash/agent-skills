@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "component": "agent-skills",
+  "entries": [
+    {
+      "source": "_shared/save/docs/runtime/save_artifacts.md",
+      "destination": "harness/.agents/save_artifacts.md"
+    },
+    {
+      "source": "_shared/save/docs/runtime/save_helpers.md",
+      "destination": "harness/.agents/save_helpers.md"
+    },
+    {
+      "source": "discriminator/SKILL.md",
+      "destination": "harness/.agents/skills/discriminator/SKILL.md"
+    },
+    {
+      "source": "discriminator/harness/codex/agents/discriminator.toml",
+      "destination": "harness/.agents/skills/discriminator/agents/discriminator.toml"
+    },
+    {
+      "source": "discriminator/src/assets/preamble_envelope.txt",
+      "destination": "harness/.agents/skills/discriminator/assets/preamble_envelope.txt"
+    },
+    {
+      "source": "discriminator/src/assets/preamble_finding.txt",
+      "destination": "harness/.agents/skills/discriminator/assets/preamble_finding.txt"
+    },
+    {
+      "source": "discriminator/src/assets/rubric.lock.json",
+      "destination": "harness/.agents/skills/discriminator/assets/rubric.lock.json"
+    },
+    {
+      "source": "discriminator/src/assets/rubric.txt",
+      "destination": "harness/.agents/skills/discriminator/assets/rubric.txt"
+    },
+    {
+      "source": "discriminator/harness/claude/claude_reviewer.py",
+      "destination": "harness/.agents/skills/discriminator/claude_reviewer.py"
+    },
+    {
+      "source": "discriminator/src/contracts/code-fleet.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/code-fleet.md"
+    },
+    {
+      "source": "discriminator/src/contracts/code-service.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/code-service.md"
+    },
+    {
+      "source": "discriminator/src/contracts/configuration.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/configuration.md"
+    },
+    {
+      "source": "discriminator/src/contracts/model-instruction.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/model-instruction.md"
+    },
+    {
+      "source": "discriminator/src/contracts/pipeline-template.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/pipeline-template.md"
+    },
+    {
+      "source": "discriminator/src/contracts/plan-design.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/plan-design.md"
+    },
+    {
+      "source": "discriminator/src/contracts/project-state.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/project-state.md"
+    },
+    {
+      "source": "discriminator/src/contracts/research-report.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/research-report.md"
+    },
+    {
+      "source": "discriminator/src/contracts/vault-raw.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/vault-raw.md"
+    },
+    {
+      "source": "discriminator/src/contracts/vault-wiki.md",
+      "destination": "harness/.agents/skills/discriminator/contracts/vault-wiki.md"
+    },
+    {
+      "source": "discriminator/src/envelope.py",
+      "destination": "harness/.agents/skills/discriminator/envelope.py"
+    },
+    {
+      "source": "discriminator/src/envelope_schema.py",
+      "destination": "harness/.agents/skills/discriminator/envelope_schema.py"
+    },
+    {
+      "source": "discriminator/src/family_attestation.py",
+      "destination": "harness/.agents/skills/discriminator/family_attestation.py"
+    },
+    {
+      "source": "discriminator/src/native_review.py",
+      "destination": "harness/.agents/skills/discriminator/native_review.py"
+    },
+    {
+      "source": "discriminator/src/packet.py",
+      "destination": "harness/.agents/skills/discriminator/packet.py"
+    },
+    {
+      "source": "discriminator/src/request.py",
+      "destination": "harness/.agents/skills/discriminator/request.py"
+    },
+    {
+      "source": "discriminator/src/result.py",
+      "destination": "harness/.agents/skills/discriminator/result.py"
+    },
+    {
+      "source": "discriminator/src/supervisor.py",
+      "destination": "harness/.agents/skills/discriminator/supervisor.py"
+    },
+    {
+      "source": "discriminator/src/telemetry.py",
+      "destination": "harness/.agents/skills/discriminator/telemetry.py"
+    },
+    {
+      "source": "discriminator/harness/codex/transport.py",
+      "destination": "harness/.agents/skills/discriminator/transport.py"
+    },
+    {
+      "source": "obsidian/SKILL.md",
+      "destination": "harness/.agents/skills/obsidian/SKILL.md"
+    },
+    {
+      "source": "obsidian/scripts/_vault_resolve.py",
+      "destination": "harness/.agents/skills/obsidian/scripts/_vault_resolve.py"
+    },
+    {
+      "source": "obsidian/scripts/vault_ops.py",
+      "destination": "harness/.agents/skills/obsidian/scripts/vault_ops.py"
+    },
+    {
+      "source": "obsidian/scripts/vault_search.py",
+      "destination": "harness/.agents/skills/obsidian/scripts/vault_search.py"
+    },
+    {
+      "source": "restore/SKILL.md",
+      "destination": "harness/.agents/skills/restore/SKILL.md"
+    },
+    {
+      "source": "save/SKILL.md",
+      "destination": "harness/.agents/skills/save/SKILL.md"
+    },
+    {
+      "source": "_shared/save/scripts/recall.py",
+      "destination": "harness/.agents/skills/save/scripts/recall.py"
+    },
+    {
+      "source": "_shared/save/scripts/citemap.py",
+      "destination": "harness/.agents/skills/save/scripts/citemap.py"
+    },
+    {
+      "source": "_shared/save/scripts/demote.py",
+      "destination": "harness/.agents/skills/save/scripts/demote.py"
+    },
+    {
+      "source": "_shared/save/scripts/init_project.py",
+      "destination": "harness/.agents/skills/save/scripts/init_project.py"
+    },
+    {
+      "source": "_shared/save/scripts/regen_manifest.py",
+      "destination": "harness/.agents/skills/save/scripts/regen_manifest.py"
+    },
+    {
+      "source": "_shared/save/scripts/update_state.py",
+      "destination": "harness/.agents/skills/save/scripts/update_state.py"
+    },
+    {
+      "source": "_shared/save/scripts/validate_entries.py",
+      "destination": "harness/.agents/skills/save/scripts/validate_entries.py"
+    },
+    {
+      "source": "webfetch/README.md",
+      "destination": "harness/.agents/skills/webfetch/README.md"
+    },
+    {
+      "source": "webfetch/SKILL.md",
+      "destination": "harness/.agents/skills/webfetch/SKILL.md"
+    },
+    {
+      "source": "webfetch/default_blocklist.json",
+      "destination": "harness/.agents/skills/webfetch/default_blocklist.json"
+    },
+    {
+      "source": "webfetch/extract.py",
+      "destination": "harness/.agents/skills/webfetch/extract.py"
+    },
+    {
+      "source": "webfetch/fetch.py",
+      "destination": "harness/.agents/skills/webfetch/fetch.py"
+    },
+    {
+      "source": "webfetch/safety.py",
+      "destination": "harness/.agents/skills/webfetch/safety.py"
+    },
+    {
+      "source": "webfetch/state.py",
+      "destination": "harness/.agents/skills/webfetch/state.py"
+    },
+    {
+      "source": "webfetch/tiers.py",
+      "destination": "harness/.agents/skills/webfetch/tiers.py"
+    },
+    {
+      "source": "websearch/SKILL.md",
+      "destination": "harness/.agents/skills/websearch/SKILL.md"
+    },
+    {
+      "source": "websearch/providers/_shared/keyfile.py",
+      "destination": "harness/.agents/skills/websearch/providers/_shared/keyfile.py"
+    },
+    {
+      "source": "websearch/providers/anthropic-search/README.md",
+      "destination": "harness/.agents/skills/websearch/providers/anthropic-search/README.md"
+    },
+    {
+      "source": "websearch/providers/anthropic-search/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/anthropic-search/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/anthropic-search/search.py",
+      "destination": "harness/.agents/skills/websearch/providers/anthropic-search/search.py"
+    },
+    {
+      "source": "websearch/providers/codex-search/README.md",
+      "destination": "harness/.agents/skills/websearch/providers/codex-search/README.md"
+    },
+    {
+      "source": "websearch/providers/codex-search/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/codex-search/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/codex-search/search.py",
+      "destination": "harness/.agents/skills/websearch/providers/codex-search/search.py"
+    },
+    {
+      "source": "websearch/providers/copilot-search/README.md",
+      "destination": "harness/.agents/skills/websearch/providers/copilot-search/README.md"
+    },
+    {
+      "source": "websearch/providers/copilot-search/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/copilot-search/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/copilot-search/search.py",
+      "destination": "harness/.agents/skills/websearch/providers/copilot-search/search.py"
+    },
+    {
+      "source": "websearch/providers/brave/SECURITY.md",
+      "destination": "harness/.agents/skills/websearch/providers/brave/SECURITY.md"
+    },
+    {
+      "source": "websearch/providers/brave/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/brave/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/brave/scripts/brave_search.py",
+      "destination": "harness/.agents/skills/websearch/providers/brave/scripts/brave_search.py"
+    },
+    {
+      "source": "websearch/providers/exa/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/exa/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/exa/scripts/exa_search.py",
+      "destination": "harness/.agents/skills/websearch/providers/exa/scripts/exa_search.py"
+    },
+    {
+      "source": "websearch/providers/searxng/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/searxng/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/searxng/references/usage.md",
+      "destination": "harness/.agents/skills/websearch/providers/searxng/references/usage.md"
+    },
+    {
+      "source": "websearch/providers/searxng/searxng_search.py",
+      "destination": "harness/.agents/skills/websearch/providers/searxng/searxng_search.py"
+    },
+    {
+      "source": "websearch/providers/searxng/LICENSE",
+      "destination": "harness/.agents/skills/websearch/providers/searxng/LICENSE"
+    },
+    {
+      "source": "websearch/providers/searxng/NOTICE",
+      "destination": "harness/.agents/skills/websearch/providers/searxng/NOTICE"
+    },
+    {
+      "source": "websearch/providers/serper/SECURITY.md",
+      "destination": "harness/.agents/skills/websearch/providers/serper/SECURITY.md"
+    },
+    {
+      "source": "websearch/providers/serper/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/serper/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/serper/scripts/serper.py",
+      "destination": "harness/.agents/skills/websearch/providers/serper/scripts/serper.py"
+    },
+    {
+      "source": "websearch/providers/tavily/SECURITY.md",
+      "destination": "harness/.agents/skills/websearch/providers/tavily/SECURITY.md"
+    },
+    {
+      "source": "websearch/providers/tavily/_SKILL.md",
+      "destination": "harness/.agents/skills/websearch/providers/tavily/_SKILL.md"
+    },
+    {
+      "source": "websearch/providers/tavily/scripts/tavily_search.py",
+      "destination": "harness/.agents/skills/websearch/providers/tavily/scripts/tavily_search.py"
+    },
+    {
+      "source": "websearch/scripts/search.py",
+      "destination": "harness/.agents/skills/websearch/scripts/search.py"
+    },
+    {
+      "source": "discriminator/harness/claude/agents/discriminator.md",
+      "destination": "harness/.claude/agents/discriminator.md"
+    },
+    {
+      "source": "discriminator/harness/omp/index.ts",
+      "destination": "harness/.omp/shared/extensions/discriminator/index.ts"
+    },
+    {
+      "source": "webfetch/harness/omp/omp-web/SKILL.md",
+      "destination": "harness/.omp/agent/skills/omp-web/SKILL.md"
+    },
+    {
+      "source": "webfetch/harness/omp/omp-web/references/cdp.md",
+      "destination": "harness/.omp/agent/skills/omp-web/references/cdp.md"
+    },
+    {
+      "source": "_shared/workflow/src/__init__.py",
+      "destination": "harness/.agents/skills/_workflow/__init__.py"
+    },
+    {
+      "source": "_shared/workflow/src/contracts.py",
+      "destination": "harness/.agents/skills/_workflow/contracts.py"
+    },
+    {
+      "source": "_shared/workflow/src/controller.py",
+      "destination": "harness/.agents/skills/_workflow/controller.py"
+    },
+    {
+      "source": "_shared/workflow/harness/claude/adapter.py",
+      "destination": "harness/.agents/skills/_workflow/harness/claude/adapter.py"
+    },
+    {
+      "source": "_shared/workflow/harness/codex/adapter.py",
+      "destination": "harness/.agents/skills/_workflow/harness/codex/adapter.py"
+    },
+    {
+      "source": "_shared/workflow/harness/omp/adapter.ts",
+      "destination": "harness/.agents/skills/_workflow/harness/omp/adapter.ts"
+    },
+    {
+      "source": "_shared/workflow/src/publication.py",
+      "destination": "harness/.agents/skills/_workflow/publication.py"
+    },
+    {
+      "source": "_shared/workflow/registry.json",
+      "destination": "harness/.agents/skills/_workflow/registry.json"
+    },
+    {
+      "source": "_shared/workflow/src/store.py",
+      "destination": "harness/.agents/skills/_workflow/store.py"
+    },
+    {
+      "source": "_shared/workflow/src/workflow.py",
+      "destination": "harness/.agents/skills/_workflow/workflow.py"
+    },
+    {
+      "source": "wiki/SKILL.md",
+      "destination": "harness/.agents/skills/wiki/SKILL.md"
+    },
+    {
+      "source": "wiki/__init__.py",
+      "destination": "harness/.agents/skills/wiki/__init__.py"
+    },
+    {
+      "source": "wiki/_archive/canonical-schema-v3.0.md",
+      "destination": "harness/.agents/skills/wiki/_archive/canonical-schema-v3.0.md"
+    },
+    {
+      "source": "wiki/wiki_lint.md",
+      "destination": "harness/.agents/skills/wiki/wiki_lint.md"
+    },
+    {
+      "source": "wiki/wiki_verify.md",
+      "destination": "harness/.agents/skills/wiki/wiki_verify.md"
+    },
+    {
+      "source": "wiki/canonical-schema.md",
+      "destination": "harness/.agents/skills/wiki/canonical-schema.md"
+    },
+    {
+      "source": "wiki/checklists/wiki-all.md",
+      "destination": "harness/.agents/skills/wiki/checklists/wiki-all.md"
+    },
+    {
+      "source": "wiki/checklists/wiki-atomic-marker-accuracy.md",
+      "destination": "harness/.agents/skills/wiki/checklists/wiki-atomic-marker-accuracy.md"
+    },
+    {
+      "source": "wiki/checklists/wiki-citation-discipline.md",
+      "destination": "harness/.agents/skills/wiki/checklists/wiki-citation-discipline.md"
+    },
+    {
+      "source": "wiki/checklists/wiki-frontmatter-schema.md",
+      "destination": "harness/.agents/skills/wiki/checklists/wiki-frontmatter-schema.md"
+    },
+    {
+      "source": "wiki/checklists/wiki-synthesis-quality.md",
+      "destination": "harness/.agents/skills/wiki/checklists/wiki-synthesis-quality.md"
+    },
+    {
+      "source": "wiki/docs/user-manual.md",
+      "destination": "harness/.agents/skills/wiki/docs/user-manual.md"
+    },
+    {
+      "source": "wiki/resources/clickup/clickup_api.py",
+      "destination": "harness/.agents/skills/wiki/resources/clickup/clickup_api.py"
+    },
+    {
+      "source": "wiki/resources/clickup/create_task_deduped.py",
+      "destination": "harness/.agents/skills/wiki/resources/clickup/create_task_deduped.py"
+    },
+    {
+      "source": "wiki/runtime/__init__.py",
+      "destination": "harness/.agents/skills/wiki/runtime/__init__.py"
+    },
+    {
+      "source": "wiki/runtime/actions.py",
+      "destination": "harness/.agents/skills/wiki/runtime/actions.py"
+    },
+    {
+      "source": "wiki/runtime/audit.py",
+      "destination": "harness/.agents/skills/wiki/runtime/audit.py"
+    },
+    {
+      "source": "wiki/runtime/capture.py",
+      "destination": "harness/.agents/skills/wiki/runtime/capture.py"
+    },
+    {
+      "source": "wiki/runtime/citations.py",
+      "destination": "harness/.agents/skills/wiki/runtime/citations.py"
+    },
+    {
+      "source": "wiki/runtime/coverage.py",
+      "destination": "harness/.agents/skills/wiki/runtime/coverage.py"
+    },
+    {
+      "source": "wiki/runtime/provenance.py",
+      "destination": "harness/.agents/skills/wiki/runtime/provenance.py"
+    },
+    {
+      "source": "wiki/runtime/schema.py",
+      "destination": "harness/.agents/skills/wiki/runtime/schema.py"
+    },
+    {
+      "source": "wiki/runtime/tasks.py",
+      "destination": "harness/.agents/skills/wiki/runtime/tasks.py"
+    },
+    {
+      "source": "wiki/runtime/vault_controls.py",
+      "destination": "harness/.agents/skills/wiki/runtime/vault_controls.py"
+    },
+    {
+      "source": "wiki/runtime/workflows.py",
+      "destination": "harness/.agents/skills/wiki/runtime/workflows.py"
+    },
+    {
+      "source": "wiki/scripts/extract_article.py",
+      "destination": "harness/.agents/skills/wiki/scripts/extract_article.py"
+    },
+    {
+      "source": "wiki/scripts/extract_book.py",
+      "destination": "harness/.agents/skills/wiki/scripts/extract_book.py"
+    },
+    {
+      "source": "wiki/scripts/extract_document.py",
+      "destination": "harness/.agents/skills/wiki/scripts/extract_document.py"
+    },
+    {
+      "source": "wiki/scripts/extract_reddit.py",
+      "destination": "harness/.agents/skills/wiki/scripts/extract_reddit.py"
+    },
+    {
+      "source": "wiki/scripts/extract_youtube.py",
+      "destination": "harness/.agents/skills/wiki/scripts/extract_youtube.py"
+    },
+    {
+      "source": "wiki/scripts/tag_ontology.py",
+      "destination": "harness/.agents/skills/wiki/scripts/tag_ontology.py"
+    },
+    {
+      "source": "wiki/tasks/distill.md",
+      "destination": "harness/.agents/skills/wiki/tasks/distill.md"
+    },
+    {
+      "source": "wiki/tasks/extract.md",
+      "destination": "harness/.agents/skills/wiki/tasks/extract.md"
+    },
+    {
+      "source": "wiki/tasks/gather.md",
+      "destination": "harness/.agents/skills/wiki/tasks/gather.md"
+    },
+    {
+      "source": "wiki/tasks/produce.md",
+      "destination": "harness/.agents/skills/wiki/tasks/produce.md"
+    },
+    {
+      "source": "wiki/tasks/repair.md",
+      "destination": "harness/.agents/skills/wiki/tasks/repair.md"
+    },
+    {
+      "source": "wiki/tasks/synthesize.md",
+      "destination": "harness/.agents/skills/wiki/tasks/synthesize.md"
+    },
+    {
+      "source": "wiki/tasks/verify.md",
+      "destination": "harness/.agents/skills/wiki/tasks/verify.md"
+    },
+    {
+      "source": "wiki/tasks/verify_capture.md",
+      "destination": "harness/.agents/skills/wiki/tasks/verify_capture.md"
+    },
+    {
+      "source": "wiki/tasks/verify_coverage.md",
+      "destination": "harness/.agents/skills/wiki/tasks/verify_coverage.md"
+    },
+    {
+      "source": "wiki/templates/book-chapter.md",
+      "destination": "harness/.agents/skills/wiki/templates/book-chapter.md"
+    },
+    {
+      "source": "wiki/templates/book-index.md",
+      "destination": "harness/.agents/skills/wiki/templates/book-index.md"
+    },
+    {
+      "source": "wiki/templates/compilation.md",
+      "destination": "harness/.agents/skills/wiki/templates/compilation.md"
+    },
+    {
+      "source": "wiki/templates/entity.md",
+      "destination": "harness/.agents/skills/wiki/templates/entity.md"
+    },
+    {
+      "source": "wiki/templates/moc.md",
+      "destination": "harness/.agents/skills/wiki/templates/moc.md"
+    },
+    {
+      "source": "wiki/templates/source-note.md",
+      "destination": "harness/.agents/skills/wiki/templates/source-note.md"
+    },
+    {
+      "source": "wiki/templates/wiki-schema-base.md",
+      "destination": "harness/.agents/skills/wiki/templates/wiki-schema-base.md"
+    },
+    {
+      "source": "wiki-compile/SKILL.md",
+      "destination": "harness/.agents/skills/wiki-compile/SKILL.md"
+    },
+    {
+      "source": "wiki-compile/scripts/wiki_topic_match.py",
+      "destination": "harness/.agents/skills/wiki-compile/scripts/wiki_topic_match.py"
+    },
+    {
+      "source": "wiki-reverify/SKILL.md",
+      "destination": "harness/.agents/skills/wiki-reverify/SKILL.md"
+    },
+    {
+      "source": "wiki-strategize/SKILL.md",
+      "destination": "harness/.agents/skills/wiki-strategize/SKILL.md"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# OMP native workflow adapter
+
+The installed `_workflow/harness/omp/adapter.ts` loads the selected real OMP public SDK through its declared Bun/runtime manifest. ExecutionContext carries exact closed source_refs, declaration/manifest/settings/model selection, evidence_dir and session_dir. It rechecks current hashes before load and submission, binds Bun to the manifest and model presence/absence to runtime.json, and refuses changed or missing inputs.
+
+Preparation retains actual package identity/contained exports, callable SDK/settings/argument validators, persisted real session, exact selected model, async manager, unshadowed bundled task, enabled callable tools and explicit discriminator registration/schema checks. Review never relies on ambient extension discovery. The canonical public extension and positive27 helper closure come from the actual installed distribution and selected Python; no staging, relay-Python, receipt or model probe supplies admission.
+
+Task execution preserves durable reservation-before-ACK, binding correlation, hook-fault abort, strict result carrier, cancellation/settlement and orderly teardown. Root permissions are controller/task authority and instructions, not a claim of OS filesystem enforcement. Unknown work is reconciled, never retried. SDK/source tests and `omp_sdk_smoke.ts` use isolated roots; model calls require separate explicit authorization. See the shared README for ordinary failure/fallback policy.
